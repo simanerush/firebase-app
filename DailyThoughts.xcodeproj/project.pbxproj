@@ -12,6 +12,7 @@
 		18D775C722AD944400AE281E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D775C622AD944400AE281E /* Assets.xcassets */; };
 		18D775CA22AD944400AE281E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D775C922AD944400AE281E /* Preview Assets.xcassets */; };
 		18D775D822AD963800AE281E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D775DA22AD963800AE281E /* LaunchScreen.storyboard */; };
+		23CF994627F1866800B50F0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 23CF994527F1866800B50F0F /* GoogleService-Info.plist */; };
 		88C32667273013B000AC914F /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C32666273013B000AC914F /* SignUpView.swift */; };
 		88C3266D27301CAC00AC914F /* JournalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C3266C27301CAC00AC914F /* JournalListView.swift */; };
 		88C3266F27301DD000AC914F /* JournalModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C3266E27301DD000AC914F /* JournalModelController.swift */; };
@@ -31,6 +32,7 @@
 		18D775C922AD944400AE281E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		18D775CE22AD944400AE281E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18D775DE22AD96B400AE281E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		23CF994527F1866800B50F0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		88C32666273013B000AC914F /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		88C3266C27301CAC00AC914F /* JournalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListView.swift; sourceTree = "<group>"; };
 		88C3266E27301DD000AC914F /* JournalModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalModelController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				88C3266B27301C8500AC914F /* Journal */,
 				18D775C622AD944400AE281E /* Assets.xcassets */,
 				18D775DA22AD963800AE281E /* LaunchScreen.storyboard */,
+				23CF994527F1866800B50F0F /* GoogleService-Info.plist */,
 				18D775CE22AD944400AE281E /* Info.plist */,
 				18D775C822AD944400AE281E /* Preview Content */,
 			);
@@ -190,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D775D822AD963800AE281E /* LaunchScreen.storyboard in Resources */,
+				23CF994627F1866800B50F0F /* GoogleService-Info.plist in Resources */,
 				18D775CA22AD944400AE281E /* Preview Assets.xcassets in Resources */,
 				18D775C722AD944400AE281E /* Assets.xcassets in Resources */,
 			);
@@ -371,7 +375,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "DailyThoughts/Preview\\ Content";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = P73F9D2RY2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = DailyThoughts/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -379,7 +383,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.DailyThoughts;
+				PRODUCT_BUNDLE_IDENTIFIER = com.simanerush.DailyThoughts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -392,7 +396,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "DailyThoughts/Preview\\ Content";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = P73F9D2RY2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = DailyThoughts/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -400,7 +404,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.DailyThoughts;
+				PRODUCT_BUNDLE_IDENTIFIER = com.simanerush.DailyThoughts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
