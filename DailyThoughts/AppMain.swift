@@ -37,6 +37,7 @@ import Firebase
 struct AppMain: App {
   init() {
     FirebaseApp.configure()
+    Database.database().isPersistenceEnabled = true
   }
 
   var body: some Scene {

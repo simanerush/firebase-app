@@ -51,10 +51,44 @@ final class JournalModelController: ObservableObject {
     return ref
   }()
   
-  // Define an encoder variable for JSON data
+  // Define encoder and decoder variables for JSON data
   private let encoder = JSONEncoder()
+  private let decoder = JSONDecoder()
   
   func listenForThoughts() {
+
+    guard let databasePath = databasePath else {
+      return
+    }
+    
+    // Attach .addChild observer
+    databasePath
+      .observe(.childAdded) { [weak self] snapshot in
+        // Retrieve snapshot
+        guard let self = self, var json = snapshot.value as? [String: Any] else {
+          return
+        }
+        // Assign id
+        json["id"] = snapshot.key
+        
+        do {
+          // Convert into a JSON object
+          let thoughtData = try JSONSerialization.data(withJSONObject: json)
+          // Finally, decode this object
+          let thought = try self.decoder.decode(ThoughtModel.self, from: thoughtData)
+          // Append a thought to display it
+          self.thoughts.append(thought)
+        } catch {
+          print("An error occured", error)
+        }
+      }
+  }
+  
+  func stopListening() {
+    databasePath?.removeAllObservers()
+  }
+  
+  func postThought() {
     // Check is database path is valid
     guard let databasePath = databasePath else {
       return
@@ -77,8 +111,4 @@ final class JournalModelController: ObservableObject {
       print("An error occured", error)
     }
   }
-  
-  func stopListening() {}
-  
-  func postThought() {}
 }
