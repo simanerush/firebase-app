@@ -31,14 +31,54 @@
 /// THE SOFTWARE.
 
 import SwiftUI
+import FirebaseAuth
+import FirebaseDatabase
 
 final class JournalModelController: ObservableObject {
   @Published var thoughts: [ThoughtModel] = []
   @Published var newThoughtText: String = ""
-
-  func listenForThoughts() {}
-
+  private lazy var databasePath: DatabaseReference? = {
+    // Get User ID of the authenticated user
+    guard let uid = Auth.auth().currentUser?.uid else {
+      return nil
+    }
+    
+    let ref = Database.database()
+      .reference()
+      .child("users/\(uid)/thoughts")
+    
+    // Return the reference to the path where thoughts data is stored
+    return ref
+  }()
+  
+  // Define an encoder variable for JSON data
+  private let encoder = JSONEncoder()
+  
+  func listenForThoughts() {
+    // Check is database path is valid
+    guard let databasePath = databasePath else {
+      return
+    }
+    // Check is the text is provided
+    if newThoughtText.isEmpty {
+      return
+    }
+    // Create a new ThoughtModel object from the text
+    let thought = ThoughtModel(text: newThoughtText)
+    
+    do {
+      // Encode the model
+      let data = try encoder.encode(thought)
+      // Create JSON object and store it
+      let json = try JSONSerialization.jsonObject(with: data)
+      databasePath.childByAutoId()
+        .setValue(json)
+    } catch {
+      print("An error occured", error)
+    }
+  }
+  
   func stopListening() {}
-
+  
   func postThought() {}
 }
