@@ -32,7 +32,7 @@
 
 import Foundation
 
-struct ThoughtModel: Identifiable {
+struct ThoughtModel: Identifiable, Codable {
   var id: String?
   var text: String
 }
